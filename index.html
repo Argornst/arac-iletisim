@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Araç Sahibi | İletişim</title>
+
+  <!-- League Spartan font only for buttons -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #4f46e5 0, #0f172a 45%, #020617 100%);
+      color: #e5e7eb;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 20px;
+      padding: 26px 22px 20px;
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(148,163,184,0.3);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(148,163,184,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glow {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(129,140,248,0.4), transparent);
+      top: -80px;
+      right: -60px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148,163,184,0.6);
+      color: #cbd5f5;
+      margin-bottom: 10px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.35);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+      color: #f9fafb;
+    }
+
+    .sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+
+    .plate-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      border-radius: 12px;
+      background: rgba(15,23,42,0.85);
+      border: 1px dashed rgba(148,163,184,0.8);
+      font-size: 12px;
+      color: #e5e7eb;
+      margin-bottom: 18px;
+    }
+
+    .plate-icon {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Buttons use League Spartan font */
+    .btn {
+      font-family: 'League Spartan', sans-serif !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 999px;
+      font-size: 17px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: #f9fafb;
+      box-shadow: 0 10px 18px rgba(79,70,229,0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 25px rgba(79,70,229,0.75);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #022c22;
+      box-shadow: 0 8px 16px rgba(34,197,94,0.5);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(34,197,94,0.7);
+    }
+
+    .wa-logo {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    .footer-text {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    @media (min-width: 480px) {
+      .btn-group {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="glow"></div>
+
+  <div class="badge">
+    <div class="badge-dot"></div>
+    Araç sahibi şu anda ulaşılabilir
+  </div>
+
+  <h1>Araç Sahibiyle İletişim</h1>
+  <p class="sub">
+    Aracım park yerinizi kısmen kapatıyor olabilir. Rahatsızlık veriyorsam lütfen benimle iletişime geçin.
+  </p>
+
+  <div class="plate-box">
+    <span class="plate-icon">🚗</span>
+    <span>Aracı hareket ettirmemi isterseniz aşağıdan arayabilir veya WhatsApp'tan yazabilirsiniz.</span>
+  </div>
+
+  <p class="hint">
+    Aşağıdaki butonlar telefonunuzda otomatik arama veya WhatsApp sohbeti açar.
+  </p>
+
+  <div class="btn-group">
+
+    <!-- CALL BUTTON -->
+    <a class="btn btn-primary" href="tel:+905457171461">
+      📞 Telefonla Ara
+    </a>
+
+    <!-- WHATSAPP BUTTON WITH SVG LOGO -->
+    <a class="btn btn-whatsapp" href="https://wa.me/905457171461">
+      <svg class="wa-logo" viewBox="0 0 32 32">
+        <path fill="#fff" d="M16.001 3.2c-7.064 0-12.8 5.736-12.8 12.8 0 2.256.592 4.447 1.712 6.4L3.2 28.8l6.592-1.665c1.856.992 3.936 1.521 6.208 1.521 7.064 0 12.8-5.736 12.8-12.8s-5.736-12.8-12.8-12.8zm0 23.313c-1.92 0-3.776-.512-5.408-1.472l-.384-.224-3.904.992 1.024-3.808-.256-.416c-1.024-1.68-1.568-3.616-1.568-5.6 0-5.92 4.8-10.72 10.72-10.72s10.72 4.8 10.72 10.72-4.8 10.72-10.72 10.72zm5.824-7.84c-.32-.16-1.856-.912-2.144-1.024-.288-.096-.496-.16-.704.16-.208.32-.8 1.024-.992 1.232-.192.224-.352.256-.672.096-.32-.16-1.344-.496-2.56-1.6-.944-.848-1.6-1.856-1.792-2.176-.192-.32-.02-.496.144-.656.144-.144.32-.384.48-.576.16-.192.224-.32.32-.544.096-.224.048-.416-.016-.576-.16-.32-.704-1.712-.96-2.336-.256-.624-.512-.544-.704-.544-.192 0-.416-.032-.64-.032-.224 0-.576.08-.864.384-.288.32-1.12 1.088-1.12 2.656s1.152 3.088 1.312 3.296c.16.224 2.24 3.424 5.44 4.672.768.32 1.36.512 1.824.656.768.256 1.472.224 2.016.128.64-.096 1.856-.768 2.112-1.504.256-.736.256-1.376.192-1.504-.064-.128-.288-.208-.608-.368z"/>
+      </svg>
+      WhatsApp'tan Yaz
+    </a>
+
+  </div>
+
+  <p class="footer-text">
+    İlginiz ve anlayışınız için teşekkür ederim. 🙏
+  </p>
+</div>
+
+</body>
+</html>
